@@ -1,24 +1,13 @@
-# README
+# Default store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Ruby on Rails tutorial on how to create a simple application of a "store". In the guide, it is only taught on creating a CRUD of a `Product` table and some views to manipulate it and some basic authentication.
 
-Things you may want to cover:
+I am adding some more features to make this project complete and able to be used in a real scenario in small scale.
 
-* Ruby version
+External dependencies being used:
+- Tailwindcss
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Info:
+* Ruby version - 3.4.5
+* Database - SQLite
+* Ruby on Rails version - 8.1
