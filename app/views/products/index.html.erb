@@ -1,0 +1,23 @@
+<div>
+  <h1 class="text-3xl font-bold"><%= t ".title" %></h1>
+  <%= link_to "#{t ".create"}", new_product_path if authenticated? %>
+
+  <div class="w-full flex-1 grid grid-cols-3 gap-5">
+    <% @products.each do |product| %>
+      <a href="/products/<%= product.id %>">
+        <div class="w-full h-52 cursor-pointer transition-all flex flex-col items-center justify-between shadow-md px-2 py-3 hover:-translate-y-1">
+          <%= image_tag product.featured_image, size: "100x100" if product.featured_image.attached? %>
+
+          <div class="flex flex-col gap-1 items-center">
+            <p class="text-lg">
+              <%= product.name %>
+            </p>
+            <p class="text-md text-gray-600">
+              <%= "R$" + product.price.to_s.sub(".", ",") %>
+            </p>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+en:
+  save_button: "Save"
+  label_name: "Name"
+  label_desc: "Description"
+  label_image: "Add image"
+  cancel_btn: "Cancel"
+  submit_btn: "Submit"
+  layouts:
+    application:
+      login: "Log in"
+      logout: "Log out"
+      title: "Home"
+  products:
+    index:
+      title: "Products"
+      create: "Create product"
+    show: 
+      delete: "Delete product"
+      edit: "Edit product"
+      desc: "Description"
+    new:
+      title: "Criar product"
+    edit:
+      title: "Edit product"

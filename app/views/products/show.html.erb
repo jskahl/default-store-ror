@@ -1,0 +1,18 @@
+<div>
+  <div class="w-full flex gap-3">
+  <button><%= button_to "Back", products_path %></button>
+
+  <% if authenticated? %>
+    <button class="bg-amber-600" ><%= button_to "Edit", edit_product_path(@product) %></button>
+    <button><%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %></button>
+  <% end %>
+  </div>
+
+  <h1 class="text-3xl font-bold"><%= @product.name %></h1>
+  <div class="flex justify-center items-center w-full">
+    <%= image_tag @product.featured_image, alt: "Image of #{@product.name}", size: "400x400" if @product.featured_image.attached? %>
+  </div>
+  <h2 class="text-2xl font-bold"><%= t ".desc" %></h2>
+  <p><%= @product.description %></p>
+
+</div>

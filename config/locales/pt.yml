@@ -1,0 +1,24 @@
+pt:
+  save_button: "Salvar"
+  label_name: "Nome"
+  label_desc: "Descrição"
+  label_image: "Adicionar imagem"
+  cancel_btn: "Cancelar"
+  submit_btn: "Enviar"
+  layouts:
+    application:
+      login: "Entrar"
+      logout: "Sair"
+      title: "Home"
+  products:
+    index:
+      title: "Produtos"
+      create: "Criar produto"
+    show: 
+      delete: "Deletar produto"
+      edit: "Editar produto"
+      desc: "Descrição"
+    new:
+      title: "Criar produto"
+    edit:
+      title: "Editar produto"

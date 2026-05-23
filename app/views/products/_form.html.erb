@@ -1,0 +1,30 @@
+<%= form_with model: product do |form| %>
+  <% if form.object.errors.any? %>
+    <p class="error">
+      <%= form.object.errors.full_messages.first %>
+    </p>
+  <% end %>
+  <div>
+    <%= form.label :name, "#{t 'label_name'}" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :description, "#{t 'label_desc'}" %>
+    <%= form.rich_text_area :description %>
+  </div>
+  <div>
+    <%= form.label :featured_imagem, "#{t 'label_image'}" %>
+    <%= form.file_field :featured_image %>
+  </div>
+
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.submit "#{t 'submit_btn'}" %>
+  </div>
+<% end %>
+
+<%= link_to "#{t 'cancel_btn'}", products_path %>
