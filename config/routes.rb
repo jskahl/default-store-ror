@@ -1,22 +1,13 @@
 Rails.application.routes.draw do
-  resource :session
-  resources :passwords, param: :token
-  get "up" => "rails/health#show", as: :rails_health_check # <== dont know what thjis does
-  resources :products
-  # ^-- this will create all basic CRUD routes of the 'products' model
+  get "up" => "rails/health#show", as: :rails_health_check
   root "products#index"
 
-  # or you can set the CRUD routes by default:
-  # get "/products", to: "products#index"
+  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
+  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
+  get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  # get "/products/new", to: "products#new"
-  # post "/products", to: "products#create"
 
-  # get "/products/:id", to: "products#show"
-
-  # get "/products/:id/edit", to: "products#edit"
-  # patch "/products/:id", to: "products#update"
-  # put "/products/:id", to: "products#update"
-
-  # delete "/products/:id", to: "products#destroy"
+  resources :products
+  resource :session
+  resources :passwords, param: :token
 end

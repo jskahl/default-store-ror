@@ -12,7 +12,7 @@
     <%= yield :head %>
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+    <%= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
@@ -27,7 +27,7 @@
     <nav class="flex flex-row items-center px-3 rounded-md w-1/2 h-1/14 justify-between shadow-xl shrink-0">
       <%= link_to "#{t '.title'}", root_path %>
       <%= button_to "#{t '.logout'}", session_path, method: :delete if authenticated? %>
-      <%= button_to "#{t '.login'}", new_session_path unless authenticated? %>
+      <%= link_to "#{t '.login'}", new_session_path unless authenticated? %>
     </nav>
 
     <main class="w-1/2 flex-9 px-3">
