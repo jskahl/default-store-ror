@@ -4,10 +4,9 @@
       <%= form.object.errors.full_messages.first %>
     </p>
   <% end %>
-  <div class="flex flex-col">
-    <%= form.label :name, "#{t 'label_name'}" %>
-    <%= form.text_field :name %> 
-  </div>
+
+  <%= render partial: "input", locals: { form: form, value: :name, label: "#{t 'label_name'}"} %>
+
   <div>
     <%= form.label :description, "#{t 'label_desc'}" %>
     <%= form.rich_text_area :description %>
@@ -25,6 +24,9 @@
   <div>
     <%= form.submit "#{t 'submit_btn'}" %>
   </div>
+
+
+  <%= render partial: "input", locals: { form: form, value: :name, label: "#{t 'label_name'}"} %>
 <% end %>
 
 <%= link_to "#{t 'cancel_btn'}", products_path %>
